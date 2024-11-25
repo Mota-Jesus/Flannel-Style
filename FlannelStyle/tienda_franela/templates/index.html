@@ -1,0 +1,37 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bienvenido a la tienda</title>
+</head>
+<body>
+    <h1>Bienvenido a nuestra tienda de camisas de franela</h1>
+    
+    <!-- Enlaces a otras páginas -->
+    <div>
+        <a href="{% url 'productos' %}">Ver productos</a> <!-- Enlace para ver los productos -->
+    </div>
+
+    <!-- Si el usuario está autenticado, mostrar el enlace al carrito -->
+    {% if user.is_authenticated %}
+    <div>
+        <a href="{% url 'carrito' %}">Ir al carrito</a> <!-- Enlace al carrito -->
+    </div>
+
+    <!-- Formulario para cerrar sesión -->
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Cerrar sesión</button>
+    </form>
+    {% else %}
+    <!-- Si el usuario no está autenticado, mostrar el enlace para iniciar sesión o registrarse -->
+    <div>
+        <a href="{% url 'login' %}">Iniciar sesión</a> <!-- Enlace para iniciar sesión -->
+    </div>
+    <div>
+        <a href="{% url 'registro' %}">Registrarse</a> <!-- Enlace para registrarse -->
+    </div>
+    {% endif %}
+</body>
+</html>

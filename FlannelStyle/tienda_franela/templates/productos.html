@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Productos</title>
+</head>
+<body>
+    <h1>Productos</h1>
+    <ul>
+        {% for camisa in camisas %}
+        <li>
+            {{ camisa.nombre }} - ${{ camisa.precio }}
+            <a href="{% url 'agregar_al_carrito' camisa.id %}">Agregar al carrito</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carrito</title>
+</head>
+<body>
+    <h1>Tu Carrito</h1>
+    {% if productos_carrito %}
+        <ul>
+            {% for item in productos_carrito %}
+            <li>
+                {{ item.camisa.nombre }} - {{ item.cantidad }} - ${{ item.camisa.precio }}
+                <a href="{% url 'eliminar_del_carrito' item.id %}">Eliminar</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <p>Total: ${{ total }}</p>
+    {% else %}
+        <p>Tu carrito está vacío.</p>
+    {% endif %}
+    <a href="{% url 'productos' %}">Seguir comprando</a>
+</body>
+</html>
