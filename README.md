@@ -1,7 +1,7 @@
 # Flannel-Style
 Proyecto clase Meza 5to semestres 3ra unidad
 
-##inicio
+#inicio
 - ![Captura de pantalla 2024-11-25 204026](https://github.com/user-attachments/assets/a26c198a-20e8-4e99-9f09-42208d469539)
 ##carrito
 - ![Captura de pantalla 2024-11-25 204136](https://github.com/user-attachments/assets/d5905131-424d-48d3-beaa-1cdeb184b3b7)
