@@ -1,0 +1,175 @@
+/* Fondo de la página */
+body {
+    background-color: #C48445;
+    color: white;
+    font-family: sanchez;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex; /* Flexbox para organizar el contenido verticalmente */
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+}
+
+/* Fondo SVG */
+body.with-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><path d="M0 0 H100 V20 Q75 35 50 30 T0 25 Q0 40 0 0 Z" fill="%23A40622"/></svg>') no-repeat center center;
+    background-size: cover;
+    z-index: -1; /* Asegúrate de que esté detrás del contenido */
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #000; 
+    color: white;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    z-index: 1;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+}
+
+.navbar a, .logout-link {
+    border-radius: 5px;
+    display: inline-block; 
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px; 
+    font-size: 22px; 
+}
+
+.navbar a:hover, .logout-link:hover {
+    background-color: #A40622;
+    color: #FFF; 
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten cuando no hay suficiente espacio */
+}
+
+.navbar ul li {
+    margin-left: 15px; /* Aumenta el margen entre los elementos */
+    flex-shrink: 0; /* Evita que los elementos se reduzcan demasiado */
+}
+
+.logo {
+    font-size: 30px; 
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #A40622; 
+    color: #FFF;
+}
+
+.btn-secondary {
+    background-color: #FFF;
+    color: #A40622;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Estilo del contenido principal */
+main {
+    flex: 1; /* Hace que el contenido principal se expanda */
+    padding: 50px;
+    text-align: center;
+}
+
+/* Responsividad: enlaces apilados en pantallas pequeñas */
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start; /* Alinear a la izquierda */
+        padding: 10px;
+    }
+    .navbar ul {
+        flex-direction: column; /* Apilar los enlaces */
+        width: 100%;
+    }
+    .navbar li {
+        margin: 10px 0; /* Espaciado vertical */
+    }
+}
+
+/* Botón de cierre de sesión */
+.logout-link {
+    background: none;
+    color: white; 
+    border: none;
+    padding: 15px 20px; 
+    font-size: 22px; 
+    font-family: sanchez;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block; 
+}
+
+.logout-link:hover {
+    background-color: #A40622; 
+    color: #FFF; 
+}
+
+/* Footer */
+.footer {
+    background-color: #000; 
+    color: white;
+    text-align: center;
+    padding: 20px 0; 
+    font-size: 22px; 
+    margin-top: auto; /* Empuja el footer al final */
+    width: 100%;
+}
+
+.footer-content p {
+    margin: 10px 0; 
+    line-height: 1.6; 
+    font-size: 20px; 
+}
+
+.footer-content a {
+    color: #C48445; 
+    text-decoration: none;
+    margin: 0 15px; 
+    font-size: 18px; 
+}
+
+.footer-content a:hover {
+    color: #FFF; 
+    text-decoration: underline;
+}
+

@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flannel & Style</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body class="with-background">
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <a href="{% url 'inicio' %}" class="logo">Flannel & Style</a>
+        <ul>
+            <!-- Opciones de navegación -->
+            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            <li><a href="{% url 'productos' %}">Productos</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'carrito' %}">Carrito</a></li>
+                <li>
+                    <!-- Botón de cerrar sesión -->
+                    <form action="{% url 'logout' %}" method="post" class="logout-form">
+                        {% csrf_token %}
+                        <button type="submit" class="logout-link">Cerrar sesión</button>
+                    </form>
+                </li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+                <li><a href="{% url 'registro' %}">Registrarse</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <main>
+        <h1 class="welcome-message">Bienvenido a nuestra tienda de camisas de franela</h1>
+        <div>
+            <h2 class="highlight-message">🌟 NUEVOS PRODUCTOS DISPONIBLES 🌟</h2>
+        </div>
+
+        <!-- Contenedor de las camisas -->
+        <div class="camisas-container">
+            <!-- Camisa Roja -->
+            <div class="camisa-item camisa-roja">
+                <div class="camisa-content">
+                    <h2>Camisa de Franela Roja de Cuadros Negros</h2>
+                    <p>El color rojo vibrante combinado con los cuadros negros crea un contraste atractivo y llamativo. Los cuadros pueden ser de diferentes tamaños, pero generalmente son lo bastante grandes para destacar.</p>
+                    <div class="button-group">
+                        <a href="#" class="btn btn-primary">Comprar Ahora</a>
+                        <a href="{% url 'productos' %}" class="btn btn-secondary">Ver más</a>
+                    </div>
+                </div>
+                <img src="{% static 'img/camisa-roja.png' %}" alt="Camisa Roja">
+            </div>
+    
+            <!-- Camisa Blanca -->
+            <div class="camisa-item camisa-blanca">
+                <div class="camisa-content">
+                    <h2>Camisa de Franela Blanca de Cuadros</h2>
+                    <p>El diseño de cuadros le da un toque casual y relajado, perfecto para un look de fin de semana o para combinar con jeans. Los cuadros suelen ser lo suficientemente grandes para que resalten sobre el fondo blanco.</p>
+                    <div class="button-group">
+                        <a href="#" class="btn btn-primary">Comprar Ahora</a>
+                        <a href="{% url 'productos' %}" class="btn btn-secondary">Ver más</a>
+                    </div>
+                </div>
+                <img src="{% static 'img/camisa-blanca.png' %}" alt="Camisa Blanca">
+            </div>
+    
+            <!-- Camisa Morada -->
+            <div class="camisa-item camisa-morada">
+                <div class="camisa-content">
+                    <h2>Camisa de Franela Morada de Cuadros</h2>
+                    <p>La camisa morada ofrece una opción vibrante y elegante con cuadros en tonos contrastantes. Ideal para quienes buscan destacar con un estilo único y moderno.</p>
+                    <div class="button-group">
+                        <a href="#" class="btn btn-primary">Comprar Ahora</a>
+                        <a href="{% url 'productos' %}" class="btn btn-secondary">Ver más</a>
+                    </div>
+                </div>
+                <img src="{% static 'img/camisa-morada.jpg' %}" alt="Camisa Morada">
+            </div>
+    
+            <!-- Camisa Verde -->
+            <div class="camisa-item camisa-verde">
+                <div class="camisa-content">
+                    <h2>Camisa de Franela Verde de Cuadros</h2>
+                    <p>El verde suave de esta camisa combina perfectamente con los cuadros, creando una sensación fresca y natural. Perfecta para un día casual o una salida relajada.</p>
+                    <div class="button-group">
+                        <a href="#" class="btn btn-primary">Comprar Ahora</a>
+                        <a href="{% url 'productos' %}" class="btn btn-secondary">Ver más</a>
+                    </div>
+                </div>
+                <img src="{% static 'img/camisa-verde.jpg' %}" alt="Camisa Verde">
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Flannel & Style. Todos los derechos reservados.</p>
+            <p>
+                <a href="#">Política de privacidad</a> | 
+                <a href="#">Términos de servicio</a> | 
+                <a href="#">Contacto</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

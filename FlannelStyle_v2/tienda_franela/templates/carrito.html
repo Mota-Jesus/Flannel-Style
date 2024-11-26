@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Flannel & Style</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/carrito.css' %}">
+</head>
+<body class="with-background">
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <a href="{% url 'inicio' %}" class="logo">Flannel & Style</a>
+        <ul>
+            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            <li><a href="{% url 'productos' %}">Productos</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'carrito' %}">Carrito</a></li>
+                <li>
+                    <form action="{% url 'logout' %}" method="post" class="logout-form">
+                        {% csrf_token %}
+                        <button type="submit" class="logout-link">Cerrar sesión</button>
+                    </form>
+                </li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+                <li><a href="{% url 'registro' %}">Registrarse</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <main>
+        <h1>Tu Carrito</h1>
+        
+        <!-- Barra divisoria -->
+        <hr class="divider">
+
+        {% if productos_carrito %}
+            <ul>
+                {% for item in productos_carrito %}
+                <li class="producto-carrito">
+                    <div class="producto-imagen">
+                        <!-- Mostrar imagen del producto -->
+                        {% if item.camisa.imagen %}
+                            <img src="{{ item.camisa.imagen.url }}" alt="{{ item.camisa.nombre }}" class="img-carrito">
+                        {% else %}
+                            <p>No hay imagen disponible</p>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="producto-info">
+                        <h2>{{ item.camisa.nombre }}</h2>
+                        <p><strong>Cantidad:</strong> {{ item.cantidad }}</p>
+                        <p><strong>Precio:</strong> ${{ item.camisa.precio }}</p>
+                    </div>
+
+                    <a href="{% url 'eliminar_del_carrito' item.id %}" class="btn btn-secondary">Eliminar</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <p><strong>Total: ${{ total }}</strong></p>
+        {% else %}
+            <p>Tu carrito está vacío.</p>
+        {% endif %}
+
+        <a href="{% url 'productos' %}" class="btn btn-primary">Seguir comprando</a>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Flannel & Style. Todos los derechos reservados.</p>
+            <p>
+                <a href="#">Política de privacidad</a> | 
+                <a href="#">Términos de servicio</a> | 
+                <a href="#">Contacto</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

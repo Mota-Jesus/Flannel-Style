@@ -1,0 +1,99 @@
+/* Estilos generales */
+body {
+    font-family: sanchez;
+    background-color: #C48445;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+
+    background-image: url('/static/img/Flannel&Style.png');
+    background-repeat: repeat;  /* Hace que la imagen se repita */
+    background-position: top left;  /* La imagen se alineará en la esquina superior izquierda */
+    background-size: auto;  /* Mantiene el tamaño original de la imagen */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);  /* Color negro con 50% de opacidad */
+    z-index: -1;  /* Asegura que la capa quede detrás del contenido */
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #c48545;
+    margin-bottom: 20px;
+}
+
+/* Contenedor principal del formulario */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el tamaño total del cuadro */
+}
+
+form p{
+    font: bold;
+    color: #A40622;
+}
+
+/* Estilo para los campos del formulario */
+form input {
+    color: #C48445;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Asegura que el padding no haga que el campo se desborde */
+}
+
+/* Estilo para el botón de submit */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #A40622;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-sizing: border-box; /* Asegura que el padding no haga que el botón se desborde */
+}
+
+/* Efecto hover en el botón */
+button:hover {
+    background-color: #c48545ce;
+}
+
+/* Estilo del enlace de registro */
+p {
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    margin-top: 15px;
+}
+
+p a {
+    text-decoration: none;
+    color: #c48545;
+}
+
+p a:hover {
+    text-decoration: underline;
+}

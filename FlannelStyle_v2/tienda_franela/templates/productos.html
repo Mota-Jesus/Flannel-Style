@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Flannel & Style</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/productos.css' %}">
+</head>
+<body class="with-background">
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <a href="{% url 'inicio' %}" class="logo">Flannel & Style</a>
+        <ul>
+            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            <li><a href="{% url 'productos' %}">Productos</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'carrito' %}">Carrito</a></li>
+                <li>
+                    <form action="{% url 'logout' %}" method="post" class="logout-form">
+                        {% csrf_token %}
+                        <button type="submit" class="logout-link">Cerrar sesión</button>
+                    </form>
+                </li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+                <li><a href="{% url 'registro' %}">Registrarse</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <main>
+        <h1>Productos</h1>
+
+        <!-- Barra divisoria -->
+        <hr class="divider">
+
+        <ul>
+            {% for camisa in camisas %}
+            <li>
+                <h2>{{ camisa.nombre }} - ${{ camisa.precio }}</h2>
+
+                {% if camisa.imagen %}
+                    <img src="{{ camisa.imagen.url }}" alt="{{ camisa.nombre }}" class="img-producto">
+                {% else %}
+                    <p>No hay imagen disponible</p>
+                {% endif %}
+
+                <div class="producto-detalles">
+                    <p><strong>Color:</strong> {{ camisa.color }}</p>
+                    <p><strong>Tamaño:</strong> {{ camisa.tamano }}</p>
+                    <p><strong>Material:</strong> {{ camisa.material }}</p>
+                    <p><strong>Stock:</strong> {{ camisa.stock }}</p>
+                </div>
+
+                <a href="{% url 'agregar_al_carrito' camisa.id %}" class="btn btn-primary">Agregar al carrito</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Flannel & Style. Todos los derechos reservados.</p>
+            <p>
+                <a href="#">Política de privacidad</a> | 
+                <a href="#">Términos de servicio</a> | 
+                <a href="#">Contacto</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
