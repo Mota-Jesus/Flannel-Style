@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <link rel="icon" href="{% static 'img/Flannel&style.png' %}" type="image/x-icon">
+</head>
+<body>
+    <h1>Iniciar sesión</h1>
+    
+    <div class="form-container">
+        <form method="POST">
+            {% csrf_token %}
+            
+            <!-- Muestra errores generales no relacionados a campos -->
+            {% if form.non_field_errors %}
+                <div class="error-general">
+                    {% for error in form.non_field_errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <!-- Recorre los campos del formulario -->
+            {% for field in form %}
+                <div class="form-group">
+                    <!-- Etiqueta del campo -->
+                    {{ field.label_tag }}
+
+                    <!-- Campo de entrada -->
+                    {{ field }}
+
+                    <!-- Muestra los errores del campo -->
+                    {% if field.errors %}
+                        <ul class="errorlist">
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <button type="submit">Iniciar sesión</button>
+        </form>
+
+        <p>¿No tienes cuenta? <a href="{% url 'registro' %}">Registrarse aquí</a></p>
+    </div>
+</body>
+</html>

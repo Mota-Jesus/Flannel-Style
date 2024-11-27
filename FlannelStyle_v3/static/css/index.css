@@ -1,0 +1,123 @@
+/* Estilo general para cada camisa */
+.camisa-item {
+    display: flex;
+    flex-direction: row; /* Alinear imagen a la izquierda y texto a la derecha */
+    background-color: #800000; /* Rojo oscuro (esto se sobreescribe con los colores específicos) */
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    text-align: left;
+    width: 600px; /* Ajusta el tamaño */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px; /* Espacio entre las camisas */
+}
+
+
+/* Contenido de la camisa (texto) */
+.camisa-content {
+    flex: 1;
+    padding-right: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.camisas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr)); /* Distribuir columnas dinámicamente */
+    gap: 20px; /* Espacio entre los contenedores */
+    justify-content: center; /* Centrar en el eje horizontal */
+    padding: 20px;
+}
+
+
+
+/* Imagen de la camisa */
+.camisa-item img {
+    width: 200px; /* Tamaño de la imagen */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Botones dentro de las camisas */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Estilo de la camisa roja */
+.camisa-roja {
+    background-color: #800000; /* Rojo oscuro */
+}
+
+/* Estilo de la camisa blanca */
+.camisa-blanca {
+    background-color: #daa520; /* Color dorado para la camisa blanca */
+}
+
+/* Estilo de la camisa morada */
+.camisa-morada {
+    background-color: #6a1b9a; /* Color morado */
+}
+
+/* Estilo de la camisa verde */
+.camisa-verde {
+    background-color: #388e3c; /* Color verde */
+}
+
+@media screen and (max-width: 768px) {
+    .camisas-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Más columnas en pantallas medianas */
+    }
+
+    .camisa-item {
+        flex-direction: column; /* Apila el contenido internamente */
+        text-align: center; /* Centra el texto */
+    }
+
+    .camisa-item img {
+        width: 100%; /* Imagen más grande en pantallas pequeñas */
+        height: auto;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .camisas-container {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+    }
+}
+
+
+/* Estilo para el mensaje de bienvenida */
+.welcome-message {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+/* Estilo para el mensaje destacado de nuevos productos */
+.highlight-message {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 30px 0;
+    padding: 10px;
+    color: #fff;
+    background-color:  #C48445;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+}
+
+/* Animación para el mensaje de nuevos productos */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,43 @@
+/* Estilo general para errores no relacionados con campos */
+.error-general {
+    color: red;
+    background-color: #ffe5e5;
+    border: 1px solid #ffcccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+/* Estilo para la lista de errores de campos */
+.errorlist {
+    list-style-type: none;
+    color: red;
+    font-size: 0.9rem;
+    margin: 5px 0 0;
+    padding: 0;
+}
+.errorlist li {
+    margin: 0;
+}
+
+/* Estilo para los campos del formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Estilo de los campos y sus etiquetas */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}

@@ -1,0 +1,109 @@
+/* Estilos generales */
+body.with-background {
+    background-color: #C48445;
+    font-family: sanchez, serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor de productos */
+main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Barra divisoria */
+hr.divider {
+    border: 0;
+    border-top: 2px solid white;
+    margin: 20px 0;
+    width: 100%;
+}
+
+/* Estilo para cada producto */
+main ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+main li {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 200px; /* Reducido el tamaño del cuadro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+main li:hover {
+    transform: scale(1.05);
+}
+
+/* Títulos y precio */
+h2 {
+    font-size: 20px; /* Aumenté el tamaño de la fuente */
+    color: #333;
+    margin-bottom: 10px;
+}
+
+h2 span {
+    font-weight: bold;
+    color: #A40622;
+}
+
+/* Imágenes de los productos */
+img.img-producto {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    max-height: 180px; /* Reduje la altura máxima para hacer más pequeños los cuadros */
+}
+
+/* Detalles del producto (Color, Tamaño, Material, Stock) */
+.producto-detalles p {
+    font-size: 16px; /* Aumenté el tamaño de la fuente */
+    color: #555;
+    margin: 5px 0;
+}
+
+.producto-detalles strong {
+    color: #333;
+}
+
+/* Botón de agregar al carrito */
+.btn.btn-primary {
+    display: inline-block;
+    background-color: #A40622;
+    color: #fff;
+    padding: 12px 24px; /* Aumenté el tamaño del botón */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+    background-color: #aa0c29;
+}
+
+/* Mensaje en caso de que no haya imagen */
+p {
+    color: #777;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Estilo del footer */
+.footer-content p {
+    color: white;
+}

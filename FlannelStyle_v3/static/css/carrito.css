@@ -1,0 +1,114 @@
+/* Estilos generales */
+body.with-background {
+    background-color: #C48445;
+    font-family: sanchez;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor del carrito */
+main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Barra divisoria entre el título y el contenido */
+hr.divider {
+    margin: 20px 0;
+    border: 1px solid white;
+}
+
+/* Estilo de los productos en el carrito */
+.producto-carrito {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex; /* Usamos flex para alinear imagen y texto en fila */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.producto-carrito:hover {
+    transform: scale(1.05);
+}
+
+/* Imagen del producto */
+.producto-imagen {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.img-carrito {
+    width: 120px;  /* Ajuste del tamaño de la imagen */
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Información del producto */
+.producto-info {
+    flex: 2;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+.producto-info h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.producto-info p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+    text-align: center; 
+}
+
+/* Botón de eliminar */
+.btn.btn-secondary {
+    display: inline-block;
+    background-color: #A40622;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn.btn-secondary:hover {
+    background-color: #a50b28;
+}
+
+/* Botón de seguir comprando */
+.btn.btn-primary {
+    display: inline-block;
+    background-color: #A40622;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    font: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+    background-color: #aa0c29;
+}
+
+main p{
+font-size: 22px;
+font: bold;
+}
+

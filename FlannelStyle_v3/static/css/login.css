@@ -1,0 +1,127 @@
+/* Estilos generales para el formulario */
+body {
+    font-family: sanchez;
+    background-color: #C48445;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+
+    background-image: url('/static/img/Flannel&Style.png');
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: auto;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #c48545;
+    margin-bottom: 20px;
+}
+
+/* Contenedor principal del formulario */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* Estilo general para errores no relacionados con campos */
+.error-general {
+    color: red;
+    background-color: #ffe5e5;
+    border: 1px solid #ffcccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+/* Estilo para la lista de errores de campos */
+.errorlist {
+    list-style-type: none;
+    color: red;
+    font-size: 0.9rem;
+    margin: 5px 0 0;
+    padding: 0;
+}
+
+.errorlist li {
+    margin: 0;
+}
+
+/* Estilo para los campos del formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Estilo de los campos y sus etiquetas */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilo para el botón de submit */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #A40622;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+}
+
+/* Efecto hover en el botón */
+button:hover {
+    background-color: #c48545ce;
+}
+
+/* Estilo del enlace de registro */
+p {
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    margin-top: 15px;
+}
+
+p a {
+    text-decoration: none;
+    color: #c48545;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
